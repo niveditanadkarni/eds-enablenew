@@ -20,7 +20,7 @@ function fixLazyImages(main) {
  * e.g. https://wknd.site/path/img.jpg → http://localhost:3001/path/img.jpg?host=https://wknd.site
  */
 function makeProxySrcs(main, host) {
-  const origin = new URL(host).origin;
+  const { origin } = new URL(host);
   main.querySelectorAll('img').forEach((img) => {
     // already going through the proxy — leave it alone
     if (!img.src || img.src.startsWith('http://localhost')) return;
