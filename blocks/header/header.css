@@ -1,6 +1,7 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: var(--header-bg);
+  color: var(--header-text);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -72,7 +73,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: var(--header-bg);
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -144,8 +145,11 @@ header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
   font-size: var(--heading-font-size-s);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--brand-color);
 }
 
 header nav .nav-brand img {
@@ -175,6 +179,19 @@ header nav .nav-sections ul {
 
 header nav .nav-sections ul > li {
   font-weight: 500;
+  color: var(--header-text);
+}
+
+header nav .nav-sections ul > li > a:any-link {
+  color: var(--header-text);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+header nav .nav-sections ul > li > a:hover {
+  color: var(--brand-color);
+  text-decoration: none;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -269,4 +286,21 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-tools a:any-link {
+  background-color: var(--brand-color);
+  color: #000;
+  padding: 8px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 2px;
+}
+
+header nav .nav-tools a:hover {
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
 }
