@@ -1,0 +1,29 @@
+version: 1
+indices:
+  query-index:
+    include:
+      - /magazine/**
+    exclude: []
+    properties:
+      path:
+        select: none
+        value: |
+          concat(path, '')
+      title:
+        select: head > meta[property='og:title']
+        value: attribute(el, 'content')
+      image:
+        select: head > meta[property='og:image']
+        value: attribute(el, 'content')
+      description:
+        select: head > meta[name='description']
+        value: attribute(el, 'content')
+      author:
+        select: head > meta[name='author']
+        value: attribute(el, 'content')
+      publication-date:
+        select: head > meta[name='publication-date']
+        value: attribute(el, 'content')
+      tags:
+        select: head > meta[name='tags']
+        value: attribute(el, 'content')
