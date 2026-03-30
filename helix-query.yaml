@@ -3,12 +3,9 @@ indices:
   query-index:
     include:
       - /magazine/**
-    exclude: []
+    exclude:
+      - /magazine/index
     properties:
-      path:
-        select: none
-        value: |
-          concat(path, '')
       title:
         select: head > meta[property='og:title']
         value: attribute(el, 'content')
@@ -25,5 +22,5 @@ indices:
         select: head > meta[name='publication-date']
         value: attribute(el, 'content')
       tags:
-        select: head > meta[name='tags']
+        select: head > meta[property='article:tag']
         value: attribute(el, 'content')
